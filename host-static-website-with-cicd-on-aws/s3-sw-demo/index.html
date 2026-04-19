@@ -3,48 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Demo</title>
+    <title>My AWS Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1 class="fade-in">AWS Demo</h1>
-        <p class="fade-in delay">Secure Static Website on AWS</p>
-        <a href="#about" class="btn fade-in delay-2">Explore</a>
-    </header>
+<header>
+    <h1 class="fade-in">My AWS Portfolio</h1>
+    <p class="fade-in delay">Secure Static Website on AWS</p>
+    <a href="#demo" class="btn fade-in delay-2">View Demo</a>
+</header>
 
-    <!-- ABOUT -->
-    <section id="about" class="section hidden">
-        <h2>About This Project</h2>
-        <p>
-            This project showcases a secure and automated static website deployment on AWS.
-            The site is stored in a private S3 bucket and distributed via CloudFront using
-            origin access control to prevent direct public access.
+<section id="about" class="section hidden">
+    <h2>About This Project</h2>
+    <p>
+        This project showcases a secure and automated static website deployment on AWS.
+        The site is stored in a private Amazon S3 bucket and distributed via CloudFront
+        using origin access control to prevent direct public access. Deployment is automated
+        through AWS CodePipeline integrated with GitHub without a build stage.
+    </p>
+</section>
 
-            Deployment is fully automated through AWS CodePipeline integrated with GitHub.
-            Since the application is purely static, the pipeline is optimized without a 
-            build stage, enabling faster and more efficient releases.
-        </p>
-    </section>
+<section class="section hidden">
+    <h2>Architecture Highlights</h2>
+    <div class="cards">
+        <div class="card">Private S3 Bucket</div>
+        <div class="card">CloudFront CDN</div>
+        <div class="card">Origin Access Control</div>
+        <div class="card">CodePipeline + GitHub</div>
+        <div class="card">No Build Stage (Static Site)</div>
+    </div>
+</section>
 
-    <!-- FEATURES -->
-    <section class="section hidden">
-        <h2>Architecture Highlights</h2>
-        <div class="cards">
-            <div class="card">Private S3 Bucket (No Public Access)</div>
-            <div class="card">CloudFront CDN (Secure Delivery)</div>
-            <div class="card">Origin Access Control Enabled</div>
-            <div class="card">CodePipeline (GitHub Integrated)</div>
-            <div class="card">No Build Stage (Static Optimization)</div>
+<!-- VIDEO SECTION -->
+<section id="demo" class="section hidden">
+    <h2>Project Demo</h2>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/fFvZ2PQpAlM" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Step 1: Create Private S3 bucket</p>
+    </div>
+    
+     <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/D8NzGNnAabQ" 
+            title="Step 2 Video"
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Step 2: Create CloudFront Distribution</p>
+    </div>
         </div>
-    </section>
+     <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/52ISIA1Jj28" 
+            title="Step 3 Video"
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Step 3: Create CodePipeline</p>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="hidden">
-        <p>© 2026 My Portfolio | DevOps Practice</p>
-    </footer>
+<footer class="hidden">
+    <p>© 2026 My Portfolio | DevOps Practice</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

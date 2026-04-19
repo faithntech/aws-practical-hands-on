@@ -19,7 +19,6 @@ header {
 
 h1 {
     font-size: 2.8em;
-    margin-bottom: 10px;
 }
 
 /* BUTTON */
@@ -31,12 +30,12 @@ h1 {
     color: white;
     text-decoration: none;
     border-radius: 25px;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
-    background: #e68a00;
     transform: scale(1.05);
+    background: #e68a00;
 }
 
 /* SECTIONS */
@@ -59,13 +58,46 @@ h1 {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
+    transition: 0.3s;
     cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* VIDEO */
+.video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: none;
+    display: block;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.video-container video:hover {
+    transform: scale(1.02);
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #111;
 }
 
 /* FOOTER */
@@ -76,7 +108,7 @@ footer {
     text-align: center;
 }
 
-/* FADE-IN (HEADER LOAD) */
+/* ANIMATION */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
