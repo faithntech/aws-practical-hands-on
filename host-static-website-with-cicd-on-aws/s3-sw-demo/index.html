@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="fade-in">AWS Demo</h1>
+        <p class="fade-in delay">Secure Static Website on AWS</p>
+        <a href="#about" class="btn fade-in delay-2">Explore</a>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="section hidden">
+        <h2>About This Project</h2>
+        <p>
+            This project showcases a secure and automated static website deployment on AWS.
+            The site is stored in a private S3 bucket and distributed via CloudFront using
+            origin access control to prevent direct public access.
+
+            Deployment is fully automated through AWS CodePipeline integrated with GitHub.
+            Since the application is purely static, the pipeline is optimized without a 
+            build stage, enabling faster and more efficient releases.
+        </p>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section hidden">
+        <h2>Architecture Highlights</h2>
+        <div class="cards">
+            <div class="card">Private S3 Bucket (No Public Access)</div>
+            <div class="card">CloudFront CDN (Secure Delivery)</div>
+            <div class="card">Origin Access Control Enabled</div>
+            <div class="card">CodePipeline (GitHub Integrated)</div>
+            <div class="card">No Build Stage (Static Optimization)</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="hidden">
+        <p>© 2026 My Portfolio | DevOps Practice</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
