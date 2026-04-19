@@ -12,6 +12,16 @@ This repository showcases my experience in building and deploying cloud-based so
 ### 1️⃣ [Static Website Hosting with CI/CD Pipeline](https://github.com/faithntech/aws-projects/tree/main/host-static-website-with-cicd-on-aws)
 
 A fully automated and secure static website hosting solution using AWS services.
+## 🌐 Live Deployment
+
+This project is deployed using Vercel.
+
+🔗 Live URL: https://aws-practical-hands-on.vercel.app/
+
+Features:
+- Responsive UI
+- Deployed via CI/CD
+- Hosted on Vercel
 
 ## 🧠 Learning Approach
 
