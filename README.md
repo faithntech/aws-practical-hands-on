@@ -9,7 +9,7 @@ These projects focus on cloud architecture, CI/CD automation, security best prac
 This repository showcases my experience in building and deploying cloud-based solutions using AWS. Each project is designed to solve real-world problems and demonstrate end-to-end cloud engineering workflows.
 
 ## 📂 Projects Included
-### 1️⃣ [Static Website Hosting with CI/CD Pipeline](https://github.com/faithntech/aws-projects/tree/main/host-static-website-with-cicd-on-aws)
+### 1️⃣ [Static Website Hosting with CI/CD Pipeline](https://github.com/faithntech/aws-practical-hands-on/tree/main/host-static-website-with-cicd-on-aws)
 
 A fully automated and secure static website hosting solution using AWS services.
 
