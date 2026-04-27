@@ -1,6 +1,6 @@
 # ☁️ AWS Hands-on Practical Projects Compilation
 
-Welcome to my AWS portfolio repository. This project is a collection of hands-on AWS practical implementations demonstrating real-world cloud, DevOps, and infrastructure automation concepts.
+Welcome to my AWS portfolio repository. This project is a collection of hands-on( mostly based on tutorials ) AWS practical implementations demonstrating real-world cloud, DevOps, and infrastructure automation concepts.
 
 These projects focus on cloud architecture, CI/CD automation, security best practices, and scalable deployments using AWS services.
 
@@ -10,7 +10,6 @@ This repository showcases my experience in building and deploying cloud-based so
 
 ## 📂 Projects Included
 ### 1️⃣ [Static Website Hosting with CI/CD Pipeline](https://github.com/faithntech/aws-practical-hands-on/tree/main/host-static-website-with-cicd-on-aws)
-### https://aws-practical-hands-on.vercel.app/
 
 A fully automated and secure static website hosting solution using AWS services.
 
