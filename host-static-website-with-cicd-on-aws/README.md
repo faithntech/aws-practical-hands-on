@@ -13,38 +13,6 @@ In addition to AWS deployment, I also integrated GitHub with Vercel to host a li
 ![AWS CI/CD Architecture](./assets/aws-architecture.png)
 
 This diagram shows the end-to-end CI/CD workflow from GitHub → AWS → End Users, including a live Vercel demo layer for documentation and troubleshooting.
-
-```
-Developer
-   │
-   ▼
- GitHub
-   │
-   ▼
-AWS CodePipeline (CI/CD Orchestration)
-   │
-   ├── Source Stage
-   │      └── Fetch latest code from repository
-   │
-   └── Deploy Stage
-          └── Deploy files to S3 Website Bucket
-                    │
-                    ▼
-        Amazon S3 Static Website Bucket (Private)
-                    │
-          Protected using Origin Access Identity (OAI)
-                    │
-                    ▼
-           Amazon CloudFront (CDN)
-                    │
-     HTTPS enabled via AWS Certificate Manager (ACM)
-                    │
-                    ▼
-        GoDaddy DNS (Custom Domain Mapping)
-                    │
-                    ▼
-                 End Users
-```
              
 ## ⚙️ CI/CD Pipeline Workflow
 
