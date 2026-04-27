@@ -31,7 +31,6 @@ AWS CodePipeline (CI/CD Orchestration)
                  End Users
 ```
 
-![Uploading aws-static-hosting.png…]()
 
              
 ## ⚙️ CI/CD Pipeline Workflow (Step-by-Step)
