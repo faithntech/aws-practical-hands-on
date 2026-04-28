@@ -1,138 +1,250 @@
+/* =========================
+   DESIGN TOKENS (SYSTEM STYLE)
+========================= */
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --border: #30363d;
+
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+
+    --accent: #1f6feb;
+    --accent-hover: #388bfd;
+
+    --radius: 12px;
+    --spacing: 16px;
+}
+
+/* GLOBAL */
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
-/* HEADER */
+/* =========================
+   HEADER (TECH HERO STYLE)
+========================= */
 header {
-    background: linear-gradient(135deg, #232f3e, #1a73e8);
-    color: white;
+    background: radial-gradient(circle at top, #1f6feb20, transparent 70%),
+                var(--bg-primary);
+    border-bottom: 1px solid var(--border);
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
 }
 
 h1 {
-    font-size: 2.8em;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
-/* BUTTON */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+
+/* =========================
+   BUTTON (DEV STYLE)
+========================= */
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #ff9900;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    background: var(--accent);
     color: white;
     text-decoration: none;
-    border-radius: 25px;
-    transition: 0.3s ease;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    background: #e68a00;
+    background: var(--accent-hover);
+    border: 1px solid var(--accent);
+    transform: translateY(-2px);
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 .section {
-    padding: 60px 20px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: auto;
-    text-align: center;
+    padding: 80px 20px;
 }
 
-/* CARDS */
+/* =========================
+   CARD GRID (DASHBOARD STYLE)
+========================= */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 
+/* CARD */
 .card {
-    background: white;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+/* subtle top glow */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    background: linear-gradient(120deg, transparent, #1f6feb20, transparent);
+    opacity: 0;
     transition: 0.3s;
-    cursor: pointer;
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+.card:hover::before {
+    opacity: 1;
 }
 
-/* VIDEO */
+.card:hover,
+.video-frame:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   VIDEO GRID (TECH STYLE)
+========================= */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+/* container */
 .video-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 30px;
+    max-width: 100%;
 }
 
-.video-container iframe {
+/* frame like system panel */
+.video-frame {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+    transition: 0.25s ease;
+}
+
+/* video size (clean rectangle) */
+.video-frame iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
+    height: 200px; /* 👈 smaller rectangle */
+    border-radius: 8px;
     border: none;
     display: block;
 }
 
-.video-container video {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: 0.3s;
+/* hover effect (subtle) */
+.video-frame:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
 }
 
-.video-container video:hover {
+.video-frame iframe {
+    transition: transform 0.3s ease;
+}
+
+.video-frame:hover iframe {
     transform: scale(1.02);
 }
 
+/* caption */
 .video-caption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
     text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #111;
 }
 
-/* FOOTER */
+/* === GLOW BORDER EFFECT === */
+.card,
+.video-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after,
+.video-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg, transparent, var(--accent), transparent);
+
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0;
+    transition: 0.3s;
+
+    pointer-events: none; /* 🔥 critical fix */
+}
+
+.card:hover::after,
+.video-frame:hover::after {
+    opacity: 1;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
-    background: #232f3e;
-    color: white;
+    border-top: 1px solid var(--border);
     padding: 20px;
     text-align: center;
+    color: var(--text-secondary);
 }
 
-/* ANIMATION */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
-}
-
-.delay { animation-delay: 0.5s; }
-.delay-2 { animation-delay: 1s; }
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* SCROLL REVEAL */
+/* =========================
+   ANIMATIONS (SUBTLE)
+========================= */
 .hidden {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    transform: translateY(40px) scale(0.98);
+    transition: all 0.6s ease;
 }
 
 .show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+}
+
+/* === TECH GRID BACKGROUND === */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    pointer-events: none;
 }
