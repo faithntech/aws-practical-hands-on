@@ -17,6 +17,9 @@
 }
 
 /* GLOBAL */
+* {
+    box-sizing: border-box;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -26,6 +29,7 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
+     line-height: 1.6;
 }
 
 /* =========================
@@ -67,6 +71,16 @@ h2 {
     font-weight: 500;
     border: 1px solid transparent;
     transition: all 0.2s ease;
+    .btn {
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 18px rgba(31,111,235,0.25);
+}
+
+a {
+    position: relative;
+    z-index: 9999;
+}
 }
 
 .btn:hover {
@@ -82,6 +96,11 @@ h2 {
     max-width: 1200px;
     margin: auto;
     padding: 80px 20px;
+}
+
+/* ===== SECTION HIERARCHY IMPROVEMENT ===== */
+.section h2 {
+    letter-spacing: -0.5px;
 }
 
 /* =========================
@@ -103,6 +122,11 @@ h2 {
     position: relative;
 }
 
+.card.featured {
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 25px rgba(31,111,235,0.25);
+}
+
 /* subtle top glow */
 .card::before {
     content: "";
@@ -112,6 +136,11 @@ h2 {
     background: linear-gradient(120deg, transparent, #1f6feb20, transparent);
     opacity: 0;
     transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 .card:hover::before {
@@ -155,6 +184,9 @@ h2 {
     border-radius: 8px;
     border: none;
     display: block;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+    z-index: 2;
 }
 
 /* hover effect (subtle) */
@@ -163,9 +195,6 @@ h2 {
     transform: translateY(-4px);
 }
 
-.video-frame iframe {
-    transition: transform 0.3s ease;
-}
 
 .video-frame:hover iframe {
     transform: scale(1.02);
@@ -177,6 +206,37 @@ h2 {
     font-size: 13px;
     color: var(--text-secondary);
     text-align: center;
+}
+
+/* =========================
+   PROJECT FOLDER (TOGGLE UI)
+========================= */
+
+.project-folder {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.25s ease;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* hover interaction (consistent with cards) */
+.project-folder:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* small accent indicator */
+.project-folder::before {
+    content: "▶";
+    color: var(--accent);
+    margin-right: 10px;
 }
 
 /* === GLOW BORDER EFFECT === */
@@ -226,14 +286,12 @@ footer {
    ANIMATIONS (SUBTLE)
 ========================= */
 .hidden {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
-    transition: all 0.6s ease;
+    display: none;
 }
 
 .show {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 /* === TECH GRID BACKGROUND === */
@@ -247,4 +305,108 @@ body::before {
     background-size: 40px 40px;
     opacity: 0.05;
     pointer-events: none;
+}
+
+.cta {
+    margin-top: 20px;
+}
+
+.btn-outline {
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: white;
+}
+
+* ===== ELITE BUTTON SYSTEM ===== */
+.btn,
+.btn-outline {
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card a {
+    position: relative;
+    z-index: 5;
+}
+
+header p {
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.role {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.hero-sub {
+    margin-top: 10px;
+    color: var(--text-secondary);
+}
+
+/* Demo Header */
+.demo-header {
+    text-align: center;
+    padding: 110px 20px;
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(circle at top, #1f6feb25, transparent 70%);
+}
+
+.demo-subtitle {
+    max-width: 750px;
+    margin: 20px auto;
+    color: var(--text-secondary);
+}
+
+.tech-stack {
+    margin-top: 15px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.tech-stack span:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
 }

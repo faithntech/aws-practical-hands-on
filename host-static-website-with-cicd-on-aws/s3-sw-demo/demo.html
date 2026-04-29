@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS CI/CD Case Study | Shiela</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="demo-header">
+
+    <h1>☁️ AWS Static Website CI/CD Pipeline</h1>
+
+    <p class="demo-subtitle">
+        A fully automated cloud deployment pipeline using AWS services.
+        This project demonstrates real-world CI/CD, secure static hosting,
+        and global content delivery architecture.
+    </p>
+
+    <div class="tech-stack">
+        <span>AWS S3</span>
+        <span>CloudFront</span>
+        <span>CodePipeline</span>
+        <span>GitHub</span>
+        <span>CI/CD</span>
+    </div>
+
+</header>
+
+<section class="section">
+    <a href="index.html" class="btn-outline">← Back to Portfolio</a>
+</section>
+
+<section class="section">
+
+    <h2>Architecture Breakdown</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Source Control</h3>
+            <p>GitHub repository triggers deployment pipeline automatically.</p>
+        </div>
+
+        <div class="card">
+            <h3>CI/CD Automation</h3>
+            <p>AWS CodePipeline handles build and deployment process.</p>
+        </div>
+
+        <div class="card">
+            <h3>Static Hosting</h3>
+            <p>S3 securely hosts static website assets.</p>
+        </div>
+
+        <div class="card">
+            <h3>Global CDN</h3>
+            <p>CloudFront distributes content with low latency worldwide.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ARCHITECTURE DIAGRAM -->
+<section class="section">
+
+    <h2>Architecture Overview</h2>
+
+    <div class="card" style="text-align:center; padding:30px;">
+
+        <img src="images/aws-architecture.png" 
+             alt="AWS Architecture Diagram"
+             style="
+                width:100%;
+                max-width:900px;
+                border-radius:12px;
+                border:1px solid #30363d;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+             ">
+
+        <p style="margin-top:15px; color:#8b949e;">
+            Static Website hosted on S3 → Distributed via CloudFront → 
+            CI/CD via CodePipeline triggered from GitHub
+        </p>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Implementation Walkthrough</h2>
+
+    <div class="video-grid">
+
+        <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/fFvZ2PQpAlM"></iframe>
+            <p class="video-caption">S3 Setup</p>
+        </div>
+
+        <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/D8NzGNnAabQ"></iframe>
+            <p class="video-caption">CloudFront Setup</p>
+        </div>
+
+        <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/52ISIA1Jj28"></iframe>
+            <p class="video-caption">CI/CD Pipeline</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Shiela | AWS Cloud & DevOps Portfolio</p>
+</footer>
+
+</body>
+</html>
