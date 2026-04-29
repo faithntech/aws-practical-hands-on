@@ -1,43 +1,100 @@
-# ☁️ AWS Hands-on Practical Projects Compilation
+# 🚀 AWS CI/CD Pipeline – Static Website Hosting
 
-Welcome to my AWS portfolio repository. This project is a collection of hands-on( mostly based on tutorials ) AWS practical implementations demonstrating real-world cloud, DevOps, and infrastructure automation concepts.
+## 📌 Overview
 
-These projects focus on cloud architecture, CI/CD automation, security best practices, and scalable deployments using AWS services.
+This project is a hands-on implementation of an AWS CI/CD pipeline for deploying a static website.
 
-## 🚀 About This Repository
+It is based on a tutorial, but the main focus was on understanding cloud concepts, CI/CD workflow, and troubleshooting real deployment issues to build practical DevOps knowledge.
 
-This repository showcases my experience in building and deploying cloud-based solutions using AWS. Each project is designed to solve real-world problems and demonstrate end-to-end cloud engineering workflows.
+In addition to AWS deployment, I also integrated GitHub with Vercel to host a live demo version of the project, where I explain and demonstrate my implementation process.
 
-## 📂 Projects Included
-### 1️⃣ [Static Website Hosting with CI/CD Pipeline](https://github.com/faithntech/aws-practical-hands-on/tree/main/host-static-website-with-cicd-on-aws)
+## 🏗️ AWS CI/CD Architecture for Static Website Hosting
 
-A fully automated and secure static website hosting solution using AWS services.
+![AWS CI/CD Architecture](./assets/aws-architecture.png)
 
-## 🧠 Learning Approach
+This diagram shows the end-to-end CI/CD workflow from GitHub → AWS → End Users, including a live Vercel demo layer for documentation and troubleshooting.
+             
+## ⚙️ CI/CD Pipeline Workflow
 
-These projects were initially inspired by guided tutorials and documentation. However, my primary focus was not just replication, but **deep understanding and hands-on problem solving**.
+### 1. Code Development
+- Developer writes and updates static website code (HTML, CSS, JS)
+- Code is pushed to GitHub
+### 2. Source Stage (CodePipeline)
+- AWS CodePipeline is triggered automatically on code changes
+- It pulls the latest code from the repository
+- Stores the source artifact in an S3 artifact bucket (temporary storage)
+### 3. Deploy Stage
+- CodePipeline deploys the final output to the S3 static website bucket
+- This bucket stores all website files such as:
+  - index.html
+  - CSS, JS, images
+### 4. Secure S3 Access (OAI)
+- The S3 bucket is kept private
+- Access is restricted using Origin Access Identity (OAI)
+- Only CloudFront is allowed to read from the bucket
+### 5. Content Delivery via CloudFront
+- CloudFront serves the website globally
+- Improves performance using edge caching
+- Provides secure HTTPS access using AWS Certificate Manager (ACM)
+### 6. Domain Routing (GoDaddy DNS)
+- Custom domain purchased from GoDaddy
+- DNS is configured to point to CloudFront distribution
+- Users access the website via a branded domain
+### 7. End User Access
+- Users access the website securely via HTTPS
+- Content is delivered from nearest CloudFront edge location for low latency
 
-Throughout the process, I focused on:
+## 🎥 Live Demo (Vercel Deployment)
 
-- Understanding how each AWS service works and how they integrate together  
-- Troubleshooting real issues encountered during setup and deployment  
-- Exploring configuration options beyond the tutorial steps  
-- Strengthening my ability to design and explain cloud architectures  
-- Gaining practical experience with real-world DevOps workflows  
+To demonstrate my understanding and problem-solving approach, I also deployed a live version of this project using Vercel.
 
----
+This includes:
 
-## 🔍 What Makes These Projects Valuable
+Step-by-step walkthrough of the AWS CI/CD pipeline
+Explanation of architecture decisions
+Real-time troubleshooting and problem solving
+Deployment demonstration using GitHub integration
 
-Instead of simply following instructions, I used these projects to:
+👉 Live Demo: [https://aws-practical-hands-on.vercel.app/]
 
-- Build a solid foundation in AWS core services  
-- Develop troubleshooting and debugging skills  
-- Understand the *“why”* behind each architectural decision  
-- Simulate real-world deployment scenarios  
+## 🧠 Learning Focus
+- CI/CD automation in AWS
+- Static website hosting on S3
+- CDN and caching with CloudFront
+- Domain and DNS configuration
+- SSL/TLS security implementation
+- Infrastructure security best practices (OAI)
+- Deployment using Github + Vercel
+- Troubleshooting and problem-solving
 
----
+## 🔐 Key Security Features
+- S3 bucket is not publicly accessible
+- Access restricted using OAI (CloudFront only access)
+- HTTPS enabled using ACM
+- CloudFront acts as a secure entry point
 
-## 💡 Key Takeaway
+## 🔐 Tech Stack Used
+- Amazon S3
+- AWS CodePipeline
+- Amazon CloudFront
+- AWS Certificate Manager (ACM)
+- Origin Access Identity
+- GoDaddy DNS
+- Github
 
-These projects reflect my ability to **learn independently, solve problems, and apply AWS concepts in practical scenarios**, which are essential skills for a cloud/DevOps role.
+## 🧠 Summary
+
+A production-ready simple static website deployment pipeline with automation, and basic security best practices.
+
+## 📌 Key Takeaway
+
+This project demonstrates how AWS services integrate into a real CI/CD pipeline, focusing on automation, security, and global delivery.
+
+🚀 Future Improvements
+
+I will continue improving this project and building new ones progressively from simple to complex architectures as part of my learning journey in:
+
+Cloud Engineering
+Cloud Security
+DevSecOps
+
